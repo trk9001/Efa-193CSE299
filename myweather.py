@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -17,3 +17,8 @@ class WeatherInfo(db.Model):
 
     def __repr__(self):
         return '<WeatherInfo {}>'.format(self.time)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
