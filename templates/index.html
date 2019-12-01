@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Home | My Weather</title>
+
+<!-- Fonts from Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro:200,400|Montserrat&display=swap">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<main class="container">
+
+</main>
+
+<div class="widget">
+  <div class="clock">
+    <div class="min" id="min"></div>
+    <div class="hour" id="hour"></div>
+  </div>
+  <div class="upper">
+    <div class="date" id="date">21 March</div>
+    <div class="year">Temperature</div>
+    <div class="place update" id="temperature">0 &deg;C</div>
+  </div>
+  <div class="lower">
+    <ul class="infos">
+      <li class="info temp">
+        <h3 class="title">TODAY</h3>
+      </li>
+      <li class="info temp">
+        <h2 class="title">TEMPERATURE</h2>
+        <span class='update' id="temp">0 &deg;C</span>
+      </li>
+      <li class="info weather">
+        <h2 class="title">PRESSURE</h2>
+        <span class="update" id="pressure">0 mb</span>
+      </li>
+      <li class="info wind">
+        <h2 class="title">RAIN</h2>
+        <span class='update' id="rain">0%</span>
+      </li>
+      <li class="info humidity">
+        <h2 class="title">HUMIDITY</h2>
+        <span class='update' id="humidity">0%</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
