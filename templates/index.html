@@ -5,11 +5,13 @@
 
 <title>Home | My Weather</title>
 
-<!--Fonts from Google Fonts-->
+<!-- Fonts from Google Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro:200,400|Montserrat&display=swap">
 
-<!--Bootstrap-->
+<!-- Bootstrap -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 <main class="container">
 
@@ -49,3 +51,10 @@
     </ul>
   </div>
 </div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
