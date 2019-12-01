@@ -1,0 +1,19 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///myweather.db'
+db = SQLAlchemy(app)
+
+
+class WeatherInfo(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    time = db.Column(db.DateTime, nullable=False)
+    humidity = db.Column(db.String(50))
+    pressure_hg = db.Column(db.String(50))
+    pressure_mb = db.Column(db.String(50))
+    rain = db.Column(db.String(50))
+    temperature = db.Column(db.String(50))
+
+    def __repr__(self):
+        return '<WeatherInfo {}>'.format(self.time)
