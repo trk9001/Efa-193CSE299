@@ -16,7 +16,7 @@ class WeatherInfo(db.Model):
     temperature = db.Column(db.String(50))
 
     def __repr__(self):
-        return '<WeatherInfo {}>'.format(self.time)
+        return '<WeatherInfo ({})>'.format(self.time)
 
 
 @app.route('/')
