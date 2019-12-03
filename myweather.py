@@ -71,12 +71,6 @@ def past_n_days_weather(n) -> List[Dict[str, str]]:
     return info
 
 
-@app.route('/')
-def index():
-    """The view for the main (landing) page."""
-    return render_template('index.html')
-
-
 @app.route('/api/v1/today')
 def today_weather():
     """Retrieve the current weather data and return it in JSON."""
@@ -88,3 +82,9 @@ def today_weather():
         'temperature': '69',
     }
     return today
+
+
+@app.route('/')
+def index():
+    """The view for the main (landing) page."""
+    return render_template('index.html')
