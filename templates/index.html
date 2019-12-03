@@ -12,36 +12,36 @@
 
 <main class="container">
   <div class="row header px-5 py-3 justify-content-center">
-    <div class="col-8">
+    <div class="col-md-8">
       <div id="current-time"><span id="current-time-text"></span></div>
       <div id="current-date"><span id="current-date-text"></span></div>
       <div id="current-temperature-label">Temperature</div>
       <div id="current_temperature"></div>
     </div>
-    <div class="col-4 my-5 py-5 border-left text-center">
+    <div class="col-md-4 my-5 py-5 border-left text-center">
       <i class="fas" id="current-time-icon"></i>
     </div>
   </div>
 
   <div class="row today rounded-bottom">
     <div class="container">
-      <div class="row p-2 justify-content-center">
-        <div class="col-2 data-item">
+      <div class="row p-1 justify-content-center">
+        <div class="col-md-2 data-item">
           <h2>TODAY</h2>
         </div>
-        <div class="col-2 data-item text-center">
+        <div class="col-md-2 data-item text-center">
           <h3>TEMPERATURE</h3>
           <span class="temperature"></span>
         </div>
-        <div class="col-2 data-item text-center">
+        <div class="col-md-2 data-item text-center">
           <h3>PRESSURE</h3>
           <span class="pressure_mb"></span>
         </div>
-        <div class="col-2 data-item text-center">
+        <div class="col-md-2 data-item text-center">
           <h3>RAIN</h3>
           <span class="rain"></span>
         </div>
-        <div class="col-2 data-item text-center">
+        <div class="col-md-2 data-item text-center">
           <h3>HUMIDITY</h3>
           <span class="humidity"></span>
         </div>
@@ -53,22 +53,22 @@
     <div class="container">
     {% for datum in last_6_days_weather_data %}
       <div class="row p-2 justify-content-center">
-        <div class="col-2 data-item">
+        <div class="col-md-2 data-item">
           <h2>{{ datum.day|upper }}</h2>
         </div>
-        <div class="col-2 data-item text-center">
+        <div class="col-md-2 data-item text-center">
           <h3>TEMPERATURE</h3>
           <span class="temperature">{{ datum.temperature|upper }}</span>
         </div>
-        <div class="col-2 data-item text-center">
+        <div class="col-md-2 data-item text-center">
           <h3>PRESSURE</h3>
           <span class="pressure_mb">{{ datum.pressure_mb|upper }}</span>
         </div>
-        <div class="col-2 data-item text-center">
+        <div class="col-md-2 data-item text-center">
           <h3>RAIN</h3>
           <span class="rain">{{ datum.rain|upper }}</span>
         </div>
-        <div class="col-2 data-item text-center">
+        <div class="col-md-2 data-item text-center">
           <h3>HUMIDITY</h3>
           <span class="humidity">{{ datum.humidity|upper }}</span>
         </div>
