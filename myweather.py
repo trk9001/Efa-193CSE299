@@ -9,7 +9,8 @@ db = SQLAlchemy(app)
 
 class WeatherInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    time = db.Column(db.DateTime, nullable=False)
+    date = db.Column(db.Date, nullable=False)
+    time = db.Column(db.Time, nullable=False)
     humidity = db.Column(db.String(50))
     pressure_hg = db.Column(db.String(50))
     pressure_mb = db.Column(db.String(50))
