@@ -91,3 +91,7 @@ def index():
         'index.html',
         last_6_days_weather_data=past_n_days_weather_data(6),
     )
+
+
+# TODO: Add API point to receive weather data from a controller.
+# TODO: Add units to the template.
