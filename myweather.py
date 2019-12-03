@@ -1,7 +1,7 @@
 import datetime as dt
 from typing import List, Dict
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -11,6 +11,7 @@ db = SQLAlchemy(app)
 
 
 class WeatherInfo(db.Model):
+    """Model representing weather data for a particular date and time."""
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, nullable=False)
     time = db.Column(db.Time, nullable=False)
@@ -72,6 +73,7 @@ def past_n_days_weather(n) -> List[Dict[str, str]]:
 
 @app.route('/')
 def index():
+    """The view for the main (landing) page."""
     return render_template('index.html')
 
 
