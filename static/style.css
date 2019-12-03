@@ -35,6 +35,11 @@ body {
   font-weight: 200;
 }
 
+.last-6-days {
+  font-family: 'Advent Pro', sans-serif;
+  font-weight: 200;
+}
+
 h2 {
   font-size: 35px;
 }

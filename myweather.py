@@ -87,4 +87,7 @@ def today_weather():
 @app.route('/')
 def index():
     """The view for the main (landing) page."""
-    return render_template('index.html')
+    return render_template(
+        'index.html',
+        last_6_days_weather_data=past_n_days_weather_data(6),
+    )

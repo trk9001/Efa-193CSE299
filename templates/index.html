@@ -49,11 +49,38 @@
     </div>
   </div>
 
-  <div class="row past"></div>
+  <div class="row last-6-days rounded-bottom">
+    <div class="container">
+    {% for datum in last_6_days_weather_data %}
+      <div class="row p-2 justify-content-center">
+        <div class="col-2 data-item">
+          <h2>{{ datum.day|upper }}</h2>
+        </div>
+        <div class="col-2 data-item text-center">
+          <h3>TEMPERATURE</h3>
+          <span class="temperature">{{ datum.temperature|upper }}</span>
+        </div>
+        <div class="col-2 data-item text-center">
+          <h3>PRESSURE</h3>
+          <span class="pressure_mb">{{ datum.pressure_mb|upper }}</span>
+        </div>
+        <div class="col-2 data-item text-center">
+          <h3>RAIN</h3>
+          <span class="rain">{{ datum.rain|upper }}</span>
+        </div>
+        <div class="col-2 data-item text-center">
+          <h3>HUMIDITY</h3>
+          <span class="humidity">{{ datum.humidity|upper }}</span>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script>let $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>  {# https://flask.palletsprojects.com/en/1.1.x/patterns/jquery/#where-is-my-site #}
+<script>let $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+{# https://flask.palletsprojects.com/en/1.1.x/patterns/jquery/#where-is-my-site #}
 <script src="{{ url_for('static', filename='script.js') }}"></script>
