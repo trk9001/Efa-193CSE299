@@ -12,7 +12,22 @@ function setCurrentTime() {
     }
 }
 
+function setCurrentWeather() {
+    $.getJSON($SCRIPT_ROOT + '/api/v1/today', function (result) {
+        $('#current_temperature').html(result['temperature'] + ' &deg;C');
+        $('.today .temperature').html(result['temperature'] + ' &deg;C');
+        $('.today .pressure_mb').text(result['pressure_mb']);
+        $('.today .rain').text(result['rain']);
+        $('.today .humidity').text(result['humidity']);
+    });
+}
+
 $(function () {
+    console.log('$SCRIPT_ROOT = "' + $SCRIPT_ROOT + '"');
+
     setInterval(setCurrentTime, 1000);
     setCurrentTime();
+
+    setInterval(setCurrentWeather, 60000);
+    setCurrentWeather();
 });

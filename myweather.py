@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -22,4 +22,17 @@ class WeatherInfo(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('index.html', current_temperature=69)
+    return render_template('index.html')
+
+
+@app.route('/api/v1/today')
+def today_weather():
+    """Retrieve the current weather data and return it in JSON."""
+    today = {
+        'humidity': '0',
+        'pressure_hg': '0',
+        'pressure_mb': '0',
+        'rain': '0',
+        'temperature': '69',
+    }
+    return today

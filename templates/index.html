@@ -16,7 +16,7 @@
       <div id="current-time"><span id="current-time-text"></span></div>
       <div id="current-date"><span id="current-date-text"></span></div>
       <div id="current-temperature-label">Temperature</div>
-      <div id="current_temperature">{{ current_temperature }} &deg;C</div>
+      <div id="current_temperature"></div>
     </div>
     <div class="col-4 my-5 py-5 border-left text-center">
       <i class="fas" id="current-time-icon"></i>
@@ -31,19 +31,19 @@
         </div>
         <div class="col-2 data-item text-center">
           <h3>TEMPERATURE</h3>
-          <span>0 &deg;C</span>
+          <span class="temperature"></span>
         </div>
         <div class="col-2 data-item text-center">
           <h3>PRESSURE</h3>
-          <span>0 mb</span>
+          <span class="pressure_mb"></span>
         </div>
         <div class="col-2 data-item text-center">
           <h3>RAIN</h3>
-          <span>0%</span>
+          <span class="rain"></span>
         </div>
         <div class="col-2 data-item text-center">
           <h3>HUMIDITY</h3>
-          <span>0%</span>
+          <span class="humidity"></span>
         </div>
       </div>
     </div>
@@ -52,7 +52,8 @@
   <div class="row past"></div>
 </main>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>let $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>  {# https://flask.palletsprojects.com/en/1.1.x/patterns/jquery/#where-is-my-site #}
 <script src="{{ url_for('static', filename='script.js') }}"></script>
