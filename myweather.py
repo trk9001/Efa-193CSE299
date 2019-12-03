@@ -25,7 +25,7 @@ class WeatherInfo(db.Model):
         return '<WeatherInfo ({} {})>'.format(self.date, self.time)
 
 
-def past_n_days_weather(n) -> List[Dict[str, str]]:
+def past_n_days_weather_data(n) -> List[Dict[str, str]]:
     """Return averages of weather data for the past n days."""
     today_date = dt.date.today()
     past_n_days = [today_date - dt.timedelta(days=i) for i in range(1, n + 1)]
