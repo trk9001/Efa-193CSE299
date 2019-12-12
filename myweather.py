@@ -1,6 +1,7 @@
 import datetime as dt
 from typing import List, Dict
 
+import requests
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
@@ -74,12 +75,20 @@ def past_n_days_weather_data(n) -> List[Dict[str, str]]:
 @app.route('/api/v1/today')
 def today_weather():
     """Retrieve the current weather data and return it in JSON."""
+    api_url = 'http://api.weatherstack.com/current'
+    params = {
+        'access_key': 'be655fefd91d9fb4b89bf10a9eae2ea0',
+        'query': 'Dhaka',
+    }
+    result = requests.get(api_url, params)
+    resp = result.json()
+    print(resp)
     today = {
-        'humidity': '0',
-        'pressure_hg': '0',
-        'pressure_mb': '0',
-        'rain': '0',
-        'temperature': '69',
+        'humidity': f"{resp['current']['humidity']}%",
+        'pressure_hg': '-',
+        'pressure_mb': f"{resp['current']['pressure']} mb",
+        'rain': f"{resp['current']['precip']} mm",
+        'temperature': f"{resp['current']['temperature']} °C",
     }
     return today
 
@@ -91,7 +100,3 @@ def index():
         'index.html',
         last_6_days_weather_data=past_n_days_weather_data(6),
     )
-
-
-# TODO: Add API point to receive weather data from a controller.
-# TODO: Add units to the template.

@@ -14,8 +14,8 @@ function setCurrentTime() {
 
 function setCurrentWeather() {
     $.getJSON($SCRIPT_ROOT + '/api/v1/today', function (result) {
-        $('#current_temperature').html(result['temperature'] + ' &deg;C');
-        $('.today .temperature').html(result['temperature'] + ' &deg;C');
+        $('#current_temperature').text(result['temperature']);
+        $('.today .temperature').text(result['temperature']);
         $('.today .pressure_mb').text(result['pressure_mb']);
         $('.today .rain').text(result['rain']);
         $('.today .humidity').text(result['humidity']);
