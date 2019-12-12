@@ -53,11 +53,11 @@ def past_n_days_weather_data(n) -> List[Dict[str, str]]:
         if weather_info:  # if the data existed in the database
             info.append({
                 'day': date.strftime('%A'),
-                'humidity': f'{weather_info[0]:.1f}',
+                'humidity': f'{weather_info[0]:.1f}%',
                 'pressure_hg': f'{weather_info[1]:.1f}',
-                'pressure_mb': f'{weather_info[2]:.1f}',
-                'rain': f'{weather_info[3]:.1f}',
-                'temperature': f'{weather_info[4]:.1f}',
+                'pressure_mb': f'{weather_info[2]:.1f} mb',
+                'rain': f'{weather_info[3]:.1f} mm',
+                'temperature': f'{weather_info[4]:.1f} °C',
             })
         else:  # if the data did not exist
             info.append({
