@@ -82,7 +82,7 @@ def today_weather():
     }
     result = requests.get(api_url, params)
     resp = result.json()
-    print(resp)
+    # TODO: Store data in db.
     today = {
         'humidity': f"{resp['current']['humidity']}%",
         'pressure_hg': '-',
