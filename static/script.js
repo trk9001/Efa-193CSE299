@@ -1,5 +1,5 @@
 function setCurrentTime() {
-    let now = new Date();
+    let now = new Date(new Date().toLocaleString("en-US",{timeZone: 'Asia/Dhaka'}));
     let time_text = now.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric'});
     let date_text = now.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
     $('#current-time-text').text(time_text);
